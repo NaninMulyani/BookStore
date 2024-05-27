@@ -1,0 +1,463 @@
+-- --------------------------------------------------------
+-- Host:                         flores.radyalabs.id
+-- Server version:               PostgreSQL 13.14 (Ubuntu 13.14-1.pgdg20.04+1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0, 64-bit
+-- Server OS:                    
+-- HeidiSQL Version:             12.3.0.6589
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES  */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+-- Dumping structure for table public.Book
+CREATE TABLE IF NOT EXISTS "Book" (
+	"BookId" UUID NOT NULL,
+	"Code" VARCHAR(256) NULL DEFAULT NULL,
+	"Title" VARCHAR(256) NULL DEFAULT NULL,
+	"Author" VARCHAR(256) NULL DEFAULT NULL,
+	"Publisher" VARCHAR(256) NULL DEFAULT NULL,
+	"YearPublish" INTEGER NULL DEFAULT NULL,
+	"Genre" VARCHAR(256) NULL DEFAULT NULL,
+	"Description" TEXT NULL DEFAULT NULL,
+	"Price" NUMERIC NULL DEFAULT NULL,
+	"QtyAvailable" INTEGER NULL DEFAULT NULL,
+	"CreatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"CreatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"CreatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"LastUpdatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"IsDeleted" BOOLEAN NOT NULL,
+	"StatusRecord" INTEGER NOT NULL,
+	PRIMARY KEY ("BookId")
+);
+
+-- Dumping data for table public.Book: 0 rows
+/*!40000 ALTER TABLE "Book" DISABLE KEYS */;
+INSERT INTO "Book" ("BookId", "Code", "Title", "Author", "Publisher", "YearPublish", "Genre", "Description", "Price", "QtyAvailable", "CreatedBy", "CreatedByName", "CreatedByFullName", "CreatedAt", "CreatedAtServer", "LastUpdatedBy", "LastUpdatedByName", "LastUpdatedByFullName", "LastUpdatedAt", "LastUpdatedAtServer", "IsDeleted", "StatusRecord") VALUES
+	('1d5d862f-8ae6-4b83-ad08-158622b3330c', 'ISBN-9789793778501', 'Gadis Kecil Penjaga Bintang', 'Wikan Satriati', 'Kata Kita', 2008, 'Anak', NULL, 15000, 100, '00000000-0000-0000-0000-000000000000', 'admin@radyalabs.com', NULL, '2024-03-25 05:53:43.633106+00', '2024-03-25 12:53:43.633265+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('2bd25f1f-cd4f-47ce-a04e-d952b820fa4d', 'ISBN-9789797092412', 'Orang-orang tercinta', 'Soekanto S. A.', 'Buku Kompas', 2006, 'Anak', NULL, 20000, 100, '00000000-0000-0000-0000-000000000000', 'admin@radyalabs.com', NULL, '2024-03-25 06:17:52.112897+00', '2024-03-25 13:17:52.112934+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('10d26ca7-f200-435f-b665-dd1d81e3103a', 'ISBN-9786022422785', 'Aku Sayang Ayah Update', 'Eka Wardhana dan M. Isnaeni', 'Dar! Mizan', 2009, 'Anak', 'update desc', 30000, 100, '00000000-0000-0000-0000-000000000000', 'admin@radyalabs.com', NULL, '2024-03-25 06:17:52.308296+00', '2024-03-25 13:17:52.308297+00', '00000000-0000-0000-0000-000000000000', 'admin@radyalabs.com', NULL, '2024-03-26 06:53:50.968942+00', '2024-03-26 13:53:50.969155+00', 'false', 1),
+	('c488c9ce-b752-4e1a-8848-5ecd3f11078a', 'ISBN-9789790660298', 'Sepeda Ontel Kinanti', 'Iwok Abqary', 'Dar! Mizan', 2009, 'Anak', NULL, 15000, 300, '00000000-0000-0000-0000-000000000000', 'admin@radyalabs.com', NULL, '2024-03-25 05:16:35.489528+00', '2024-03-25 12:16:35.489549+00', '00000000-0000-0000-0000-000000000000', 'admin@radyalabs.com', NULL, '2024-04-16 03:10:56.018624+00', '2024-04-16 10:10:56.018625+00', 'false', 1),
+	('89752508-695c-4813-ba68-a3132bc71c1b', 'ISBN-9789793778000', 'Gadis Kecil Penjaga Bintang Malam', 'Wikan Satriati', 'Kata Kita', 2008, 'Anak', 'Perahu itu lenyap,kata gadis kecil. Apakah kau percaya, jika Bunda katakan perahu itu tidak lenyap, tapi akan tiba di suatu tempat ? Gadis kecil mengangguk. Ia membayangkan sebuah bandar tempat kapal-kapal besar dan perahu-perahu kecil berlabuh. Begitulah yang terjadi pada doa,'' kata Bunda. Kau bisa saja menganggap do''a menguap sia-sia, namun sesungguhnya doa itu akan sampai kepada Tuhan', 20000, 110, '00000000-0000-0000-0000-000000000000', 'admin@radyalabs.com', NULL, '2024-03-26 06:37:17.07614+00', '2024-03-26 13:37:17.076236+00', '00000000-0000-0000-0000-000000000000', 'admin@radyalabs.com', NULL, '2024-04-16 04:15:29.3752+00', '2024-04-16 11:15:29.375367+00', 'false', 1);
+/*!40000 ALTER TABLE "Book" ENABLE KEYS */;
+
+-- Dumping structure for table public.Cart
+CREATE TABLE IF NOT EXISTS "Cart" (
+	"CartId" UUID NOT NULL,
+	"UserId" UUID NOT NULL,
+	"BookId" UUID NOT NULL,
+	"Price" NUMERIC NULL DEFAULT NULL,
+	"Qty" INTEGER NULL DEFAULT NULL,
+	"TotalPrice" NUMERIC NULL DEFAULT NULL,
+	"CreatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"CreatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"CreatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"LastUpdatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"IsDeleted" BOOLEAN NOT NULL,
+	"StatusRecord" INTEGER NOT NULL,
+	PRIMARY KEY ("CartId"),
+	INDEX "IX_Cart_BookId" ("BookId"),
+	INDEX "IX_Cart_UserId" ("UserId"),
+	CONSTRAINT "FK_Cart_Book_BookId" FOREIGN KEY ("BookId") REFERENCES "Book" ("BookId") ON UPDATE NO ACTION ON DELETE CASCADE,
+	CONSTRAINT "FK_Cart_User_UserId" FOREIGN KEY ("UserId") REFERENCES "User" ("UserId") ON UPDATE NO ACTION ON DELETE CASCADE
+);
+
+-- Dumping data for table public.Cart: 0 rows
+/*!40000 ALTER TABLE "Cart" DISABLE KEYS */;
+/*!40000 ALTER TABLE "Cart" ENABLE KEYS */;
+
+-- Dumping structure for table public.FileRepository
+CREATE TABLE IF NOT EXISTS "FileRepository" (
+	"FileRepositoryId" UUID NOT NULL,
+	"FileName" VARCHAR(256) NOT NULL,
+	"UniqueFileName" VARCHAR(256) NOT NULL,
+	"FileExtension" VARCHAR(256) NOT NULL,
+	"Size" BIGINT NOT NULL,
+	"Source" VARCHAR(256) NULL DEFAULT NULL,
+	"Note" VARCHAR(512) NULL DEFAULT NULL,
+	"FileType" INTEGER NOT NULL,
+	"FileStoreAt" INTEGER NOT NULL,
+	"IsFileDeleted" BOOLEAN NOT NULL,
+	"FileDeletedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"CreatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"CreatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"CreatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"LastUpdatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"IsDeleted" BOOLEAN NOT NULL,
+	"StatusRecord" INTEGER NOT NULL,
+	PRIMARY KEY ("FileRepositoryId"),
+	UNIQUE INDEX "IX_FileRepository_UniqueFileName" ("UniqueFileName")
+);
+
+-- Dumping data for table public.FileRepository: 0 rows
+/*!40000 ALTER TABLE "FileRepository" DISABLE KEYS */;
+/*!40000 ALTER TABLE "FileRepository" ENABLE KEYS */;
+
+-- Dumping structure for table public.Inventory
+CREATE TABLE IF NOT EXISTS "Inventory" (
+	"InventoryId" UUID NOT NULL,
+	"BookId" UUID NOT NULL,
+	"QtyCurrent" INTEGER NULL DEFAULT NULL,
+	"CreatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"CreatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"CreatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"LastUpdatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"IsDeleted" BOOLEAN NOT NULL,
+	"StatusRecord" INTEGER NOT NULL,
+	"Status" INTEGER NOT NULL DEFAULT '0',
+	PRIMARY KEY ("InventoryId"),
+	INDEX "IX_Inventory_BookId" ("BookId"),
+	CONSTRAINT "FK_Inventory_Book_BookId" FOREIGN KEY ("BookId") REFERENCES "Book" ("BookId") ON UPDATE NO ACTION ON DELETE CASCADE
+);
+
+-- Dumping data for table public.Inventory: 0 rows
+/*!40000 ALTER TABLE "Inventory" DISABLE KEYS */;
+INSERT INTO "Inventory" ("InventoryId", "BookId", "QtyCurrent", "CreatedBy", "CreatedByName", "CreatedByFullName", "CreatedAt", "CreatedAtServer", "LastUpdatedBy", "LastUpdatedByName", "LastUpdatedByFullName", "LastUpdatedAt", "LastUpdatedAtServer", "IsDeleted", "StatusRecord", "Status") VALUES
+	('28acc45a-b318-4c7b-96cf-4ad269ad39b8', '89752508-695c-4813-ba68-a3132bc71c1b', 100, '00000000-0000-0000-0000-000000000000', 'admin@radyalabs.com', NULL, '2024-03-26 06:37:17.29863+00', '2024-03-26 13:37:17.298631+00', NULL, NULL, NULL, NULL, NULL, 'false', 1, 0),
+	('52cf94b7-1a9e-4eed-8bb7-3a0418ab0ea2', 'c488c9ce-b752-4e1a-8848-5ecd3f11078a', 100, '00000000-0000-0000-0000-000000000000', 'admin@radyalabs.com', NULL, '2024-04-16 03:09:59.219642+00', '2024-04-16 10:09:59.219683+00', NULL, NULL, NULL, NULL, NULL, 'false', 1, 0),
+	('718a7daa-5808-4100-ab31-85aa20c44b47', 'c488c9ce-b752-4e1a-8848-5ecd3f11078a', 100, '00000000-0000-0000-0000-000000000000', 'admin@radyalabs.com', NULL, '2024-04-16 03:10:55.977276+00', '2024-04-16 10:10:55.977277+00', NULL, NULL, NULL, NULL, NULL, 'false', 1, 0);
+/*!40000 ALTER TABLE "Inventory" ENABLE KEYS */;
+
+-- Dumping structure for table public.Option
+CREATE TABLE IF NOT EXISTS "Option" (
+	"Key" VARCHAR(256) NOT NULL,
+	"Value" VARCHAR(512) NOT NULL,
+	"Description" TEXT NULL DEFAULT NULL,
+	"CreatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"CreatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"CreatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"LastUpdatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"IsDeleted" BOOLEAN NOT NULL,
+	"StatusRecord" INTEGER NOT NULL,
+	PRIMARY KEY ("Key")
+);
+
+-- Dumping data for table public.Option: 0 rows
+/*!40000 ALTER TABLE "Option" DISABLE KEYS */;
+/*!40000 ALTER TABLE "Option" ENABLE KEYS */;
+
+-- Dumping structure for table public.Order
+CREATE TABLE IF NOT EXISTS "Order" (
+	"OrderId" UUID NOT NULL,
+	"UserId" UUID NOT NULL,
+	"OrderDate" DATE NULL DEFAULT NULL,
+	"Status" INTEGER NULL DEFAULT NULL,
+	"Total" NUMERIC NULL DEFAULT NULL,
+	"CreatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"CreatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"CreatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"LastUpdatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"IsDeleted" BOOLEAN NOT NULL,
+	"StatusRecord" INTEGER NOT NULL,
+	PRIMARY KEY ("OrderId"),
+	INDEX "IX_Order_UserId" ("UserId"),
+	CONSTRAINT "FK_Order_User_UserId" FOREIGN KEY ("UserId") REFERENCES "User" ("UserId") ON UPDATE NO ACTION ON DELETE CASCADE
+);
+
+-- Dumping data for table public.Order: 0 rows
+/*!40000 ALTER TABLE "Order" DISABLE KEYS */;
+/*!40000 ALTER TABLE "Order" ENABLE KEYS */;
+
+-- Dumping structure for table public.OrderDetail
+CREATE TABLE IF NOT EXISTS "OrderDetail" (
+	"OrderId" UUID NOT NULL,
+	"OrderDetailId" UUID NOT NULL,
+	"BookId" UUID NOT NULL,
+	"Price" NUMERIC NULL DEFAULT NULL,
+	"Qty" INTEGER NULL DEFAULT NULL,
+	"TotalPrice" NUMERIC NULL DEFAULT NULL,
+	"CreatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"CreatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"CreatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"LastUpdatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"IsDeleted" BOOLEAN NOT NULL,
+	"StatusRecord" INTEGER NOT NULL,
+	INDEX "IX_OrderDetail_BookId" ("BookId"),
+	PRIMARY KEY ("OrderDetailId"),
+	INDEX "IX_OrderDetail_OrderId" ("OrderId"),
+	CONSTRAINT "FK_OrderDetail_Book_BookId" FOREIGN KEY ("BookId") REFERENCES "Book" ("BookId") ON UPDATE NO ACTION ON DELETE CASCADE,
+	CONSTRAINT "FK_OrderDetail_Order_OrderId" FOREIGN KEY ("OrderId") REFERENCES "Order" ("OrderId") ON UPDATE NO ACTION ON DELETE CASCADE
+);
+
+-- Dumping data for table public.OrderDetail: 0 rows
+/*!40000 ALTER TABLE "OrderDetail" DISABLE KEYS */;
+/*!40000 ALTER TABLE "OrderDetail" ENABLE KEYS */;
+
+-- Dumping structure for table public.Role
+CREATE TABLE IF NOT EXISTS "Role" (
+	"RoleId" UUID NOT NULL,
+	"IsDefault" BOOLEAN NOT NULL,
+	"Code" VARCHAR(256) NOT NULL,
+	"Name" VARCHAR(256) NOT NULL,
+	"Description" VARCHAR(512) NULL DEFAULT NULL,
+	"CreatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"CreatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"CreatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"LastUpdatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"IsDeleted" BOOLEAN NOT NULL,
+	"StatusRecord" INTEGER NOT NULL,
+	PRIMARY KEY ("RoleId"),
+	INDEX "IX_Role_Code" ("Code")
+);
+
+-- Dumping data for table public.Role: 0 rows
+/*!40000 ALTER TABLE "Role" DISABLE KEYS */;
+INSERT INTO "Role" ("RoleId", "IsDefault", "Code", "Name", "Description", "CreatedBy", "CreatedByName", "CreatedByFullName", "CreatedAt", "CreatedAtServer", "LastUpdatedBy", "LastUpdatedByName", "LastUpdatedByFullName", "LastUpdatedAt", "LastUpdatedAtServer", "IsDeleted", "StatusRecord") VALUES
+	('480ec42a-ee94-43b5-8579-424414163b76', 'true', '001', 'Administrator', 'Administrator', 'System', 'System', 'System', '2024-03-18 08:47:25+00', '2024-03-18 08:47:26+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('00000000-0000-0000-0000-000000000000', 'true', '00000000000000000000000000000000-Super-Administrator', 'Super Administrator', 'Default role to the application', NULL, NULL, NULL, '2024-03-18 01:57:11.642642+00', '2024-03-18 08:57:11.643033+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('48553c03-6ee1-4fdc-b54d-19cb8586da98', 'true', '002', 'Customer', 'Customer', 'System', 'System', 'System', '2024-03-21 09:49:59+00', '2024-03-21 09:50:00+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('ec50990c-7d5f-47b9-857d-4dc6d403c3de', 'false', 'ec50990c7d5f47b9857d4dc6d403c3de-Kasir', 'Kasir', 'Kasir', '00000000-0000-0000-0000-000000000000', 'admin@radyalabs.com', NULL, '2024-03-25 04:31:25.09252+00', '2024-03-25 11:31:25.092568+00', NULL, NULL, NULL, NULL, NULL, 'false', 1);
+/*!40000 ALTER TABLE "Role" ENABLE KEYS */;
+
+-- Dumping structure for table public.RoleScope
+CREATE TABLE IF NOT EXISTS "RoleScope" (
+	"RoleScopeId" UUID NOT NULL,
+	"RoleId" UUID NOT NULL,
+	"Name" VARCHAR(256) NOT NULL,
+	"Description" VARCHAR(2048) NULL DEFAULT NULL,
+	"IsRevoked" BOOLEAN NOT NULL,
+	"RevokedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"RevokedMessage" VARCHAR(2048) NULL DEFAULT NULL,
+	"CreatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"CreatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"CreatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"LastUpdatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"IsDeleted" BOOLEAN NOT NULL,
+	"StatusRecord" INTEGER NOT NULL,
+	PRIMARY KEY ("RoleScopeId"),
+	INDEX "IX_RoleScope_RoleId" ("RoleId"),
+	CONSTRAINT "FK_RoleScope_Role_RoleId" FOREIGN KEY ("RoleId") REFERENCES "Role" ("RoleId") ON UPDATE NO ACTION ON DELETE CASCADE
+);
+
+-- Dumping data for table public.RoleScope: 0 rows
+/*!40000 ALTER TABLE "RoleScope" DISABLE KEYS */;
+/*!40000 ALTER TABLE "RoleScope" ENABLE KEYS */;
+
+-- Dumping structure for table public.User
+CREATE TABLE IF NOT EXISTS "User" (
+	"UserId" UUID NOT NULL,
+	"Username" VARCHAR(256) NOT NULL,
+	"NormalizedUsername" VARCHAR(256) NOT NULL,
+	"Salt" VARCHAR(512) NULL DEFAULT NULL,
+	"Password" VARCHAR(512) NULL DEFAULT NULL,
+	"LastPasswordChangeAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"FullName" VARCHAR(512) NULL DEFAULT NULL,
+	"Email" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"CreatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"CreatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"LastUpdatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"IsDeleted" BOOLEAN NOT NULL,
+	"StatusRecord" INTEGER NOT NULL,
+	PRIMARY KEY ("UserId")
+);
+
+-- Dumping data for table public.User: 0 rows
+/*!40000 ALTER TABLE "User" DISABLE KEYS */;
+INSERT INTO "User" ("UserId", "Username", "NormalizedUsername", "Salt", "Password", "LastPasswordChangeAt", "FullName", "Email", "CreatedBy", "CreatedByName", "CreatedByFullName", "CreatedAt", "CreatedAtServer", "LastUpdatedBy", "LastUpdatedByName", "LastUpdatedByFullName", "LastUpdatedAt", "LastUpdatedAtServer", "IsDeleted", "StatusRecord") VALUES
+	('00000000-0000-0000-0000-000000000000', 'admin@radyalabs.com', 'ADMIN@RADYALABS.COM', 'U8rIfHCQgEQLGllqL9N4OAjpmblCj+r7a40oQ3ThuQlTJcrQRbcyUoRYFDxxR5YALh5JB0CgVJgPOKYVl6V3OYYMfsSwAVCSaGWq4tESzoo58iTrn4fVxMV+lMB4MrDL+1zStMJIkEZGXTe3QAjZ1fos8Z721B0yrB3H5BVSUKk=', '5e1716cb4656ac4ddc9c090bda44b5a9175a2f082e24997e874c82bb6cd01dae9726e1a40087382ac14aabf65ae0118d569433491a408956d523fb5f79664ffe', '2024-03-18 08:40:14+00', 'Administrator', 'admin@radyalabs.com', 'Super Administrator', 'Super Administrator', 'Super Administrator', '2024-03-18 08:40:28+00', '2024-03-18 08:40:30+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('9501a528-9608-4b25-8386-5a06ff8cf0b0', 'wifamik879@otemdi.com', 'WIFAMIK879@OTEMDI.COM', 'RzhJQJTc8WUWCiqw3ff0Y0ThAHi89AzImskDZ3pSJgK4rHiHkm2QaccnKd5FFRJdQS40RNe1YFnGDwJ5gAFfI7+e8NlyqZdFCwm+AXlXWQeSlZ+hxNIMTwOaL63KR9UCim9CrSOcbp/v2YeQcLNWuKl26zsUf6O9NF45OqOlATA=', '26514e948be6a4375e8658e0629dae02c920de2a21f6a40a2737b0177a22109cd65cbbed3d47436648fb1247f6a140522a39228b26f30788f3b272e1bc63f53e', '2024-03-25 07:17:12.516378+00', 'Wifami Kotemdi', NULL, '00000000-0000-0000-0000-000000000000', 'admin@radyalabs.com', NULL, '2024-03-25 07:17:12.75585+00', '2024-03-25 14:17:12.756237+00', NULL, NULL, NULL, NULL, NULL, 'false', 1);
+/*!40000 ALTER TABLE "User" ENABLE KEYS */;
+
+-- Dumping structure for table public.UserDevice
+CREATE TABLE IF NOT EXISTS "UserDevice" (
+	"UserDeviceId" UUID NOT NULL,
+	"UserId" UUID NOT NULL,
+	"DeviceId" VARCHAR(256) NULL DEFAULT NULL,
+	"FcmToken" VARCHAR(1024) NULL DEFAULT NULL,
+	"FcmTokenExpiredAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"CreatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"CreatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"CreatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"LastUpdatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"IsDeleted" BOOLEAN NOT NULL,
+	"StatusRecord" INTEGER NOT NULL,
+	PRIMARY KEY ("UserDeviceId"),
+	INDEX "IX_UserDevice_UserId" ("UserId"),
+	CONSTRAINT "FK_UserDevice_User_UserId" FOREIGN KEY ("UserId") REFERENCES "User" ("UserId") ON UPDATE NO ACTION ON DELETE CASCADE
+);
+
+-- Dumping data for table public.UserDevice: 0 rows
+/*!40000 ALTER TABLE "UserDevice" DISABLE KEYS */;
+/*!40000 ALTER TABLE "UserDevice" ENABLE KEYS */;
+
+-- Dumping structure for table public.UserRole
+CREATE TABLE IF NOT EXISTS "UserRole" (
+	"UserId" UUID NOT NULL,
+	"RoleId" UUID NOT NULL,
+	"CreatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"CreatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"CreatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"LastUpdatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"IsDeleted" BOOLEAN NOT NULL,
+	"StatusRecord" INTEGER NOT NULL,
+	PRIMARY KEY ("UserId", "RoleId"),
+	INDEX "IX_UserRole_RoleId" ("RoleId"),
+	CONSTRAINT "FK_UserRole_Role_RoleId" FOREIGN KEY ("RoleId") REFERENCES "Role" ("RoleId") ON UPDATE NO ACTION ON DELETE CASCADE,
+	CONSTRAINT "FK_UserRole_User_UserId" FOREIGN KEY ("UserId") REFERENCES "User" ("UserId") ON UPDATE NO ACTION ON DELETE CASCADE
+);
+
+-- Dumping data for table public.UserRole: 0 rows
+/*!40000 ALTER TABLE "UserRole" DISABLE KEYS */;
+INSERT INTO "UserRole" ("UserId", "RoleId", "CreatedBy", "CreatedByName", "CreatedByFullName", "CreatedAt", "CreatedAtServer", "LastUpdatedBy", "LastUpdatedByName", "LastUpdatedByFullName", "LastUpdatedAt", "LastUpdatedAtServer", "IsDeleted", "StatusRecord") VALUES
+	('00000000-0000-0000-0000-000000000000', '480ec42a-ee94-43b5-8579-424414163b76', 'System', 'System', 'System', '2024-03-18 08:48:09+00', '2024-03-18 08:48:12+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('9501a528-9608-4b25-8386-5a06ff8cf0b0', '48553c03-6ee1-4fdc-b54d-19cb8586da98', '00000000-0000-0000-0000-000000000000', 'admin@radyalabs.com', NULL, '2024-03-25 07:17:12.756323+00', '2024-03-25 14:17:12.756324+00', NULL, NULL, NULL, NULL, NULL, 'false', 1);
+/*!40000 ALTER TABLE "UserRole" ENABLE KEYS */;
+
+-- Dumping structure for table public.UserToken
+CREATE TABLE IF NOT EXISTS "UserToken" (
+	"UserTokenId" UUID NOT NULL,
+	"UserId" UUID NOT NULL,
+	"RefreshToken" VARCHAR(256) NOT NULL,
+	"ExpiryAt" TIMESTAMPTZ NOT NULL,
+	"IsUsed" BOOLEAN NOT NULL,
+	"UsedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"CreatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"CreatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"CreatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"CreatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedBy" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByName" VARCHAR(256) NULL DEFAULT NULL,
+	"LastUpdatedByFullName" VARCHAR(512) NULL DEFAULT NULL,
+	"LastUpdatedAt" TIMESTAMPTZ NULL DEFAULT NULL,
+	"LastUpdatedAtServer" TIMESTAMPTZ NULL DEFAULT NULL,
+	"IsDeleted" BOOLEAN NOT NULL,
+	"StatusRecord" INTEGER NOT NULL,
+	PRIMARY KEY ("UserTokenId"),
+	INDEX "IX_UserToken_UserId" ("UserId"),
+	CONSTRAINT "FK_UserToken_User_UserId" FOREIGN KEY ("UserId") REFERENCES "User" ("UserId") ON UPDATE NO ACTION ON DELETE CASCADE
+);
+
+-- Dumping data for table public.UserToken: 0 rows
+/*!40000 ALTER TABLE "UserToken" DISABLE KEYS */;
+INSERT INTO "UserToken" ("UserTokenId", "UserId", "RefreshToken", "ExpiryAt", "IsUsed", "UsedAt", "CreatedBy", "CreatedByName", "CreatedByFullName", "CreatedAt", "CreatedAtServer", "LastUpdatedBy", "LastUpdatedByName", "LastUpdatedByFullName", "LastUpdatedAt", "LastUpdatedAtServer", "IsDeleted", "StatusRecord") VALUES
+	('3700d917-f4ff-43a3-9d45-22cbce9a0fb3', '00000000-0000-0000-0000-000000000000', '22dec1a68a434ded9c4b9096cd243eab', '2024-03-25 02:02:14.880659+00', 'false', NULL, NULL, NULL, NULL, '2024-03-18 02:02:19.564196+00', '2024-03-18 09:02:19.564259+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('5750da67-c070-44a9-80bc-0f767b01aa48', '00000000-0000-0000-0000-000000000000', 'dc3aca496e68451d86f26036e6583848', '2024-04-01 01:52:58.921373+00', 'false', NULL, NULL, NULL, NULL, '2024-03-25 01:52:59.124597+00', '2024-03-25 08:52:59.125064+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('69a811a7-a55c-4c57-97e5-d28e156a8160', '00000000-0000-0000-0000-000000000000', '87a220ec9f59432686ec02e964b6a10f', '2024-04-01 02:33:50.930499+00', 'false', NULL, NULL, NULL, NULL, '2024-03-25 02:33:51.154165+00', '2024-03-25 09:33:51.154591+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('b385b090-034e-488d-adfa-fe0497744ccd', '00000000-0000-0000-0000-000000000000', '2f2c674bd8e544dd8bec7caece9ac0a5', '2024-04-01 02:51:51.296308+00', 'false', NULL, NULL, NULL, NULL, '2024-03-25 02:51:51.50166+00', '2024-03-25 09:51:51.501964+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('9cf3741b-0490-4b92-98f3-fdbffa4f4d82', '00000000-0000-0000-0000-000000000000', '61c2cc89639e4c4f847f960f0f5ca923', '2024-04-01 02:57:54.552679+00', 'false', NULL, NULL, NULL, NULL, '2024-03-25 02:57:54.831797+00', '2024-03-25 09:57:54.832131+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('6395284d-2b7b-4f3b-a9ae-febc789022ed', '00000000-0000-0000-0000-000000000000', 'a8aca4b955b0454387032ce93d6ab128', '2024-04-01 03:49:35.347591+00', 'false', NULL, NULL, NULL, NULL, '2024-03-25 03:49:35.537901+00', '2024-03-25 10:49:35.538216+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('7e317e4b-865b-45a2-8e48-1eb754a120d4', '00000000-0000-0000-0000-000000000000', '58209df00b714eddb7356ca1c447ab9a', '2024-04-01 03:56:43.121114+00', 'false', NULL, NULL, NULL, NULL, '2024-03-25 03:56:43.127225+00', '2024-03-25 10:56:43.127269+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('6a972a69-7325-433e-b80b-3f009f5a0c4a', '00000000-0000-0000-0000-000000000000', '0f7f5454bd364996aec2b4346444ebcc', '2024-04-01 04:01:22.742411+00', 'false', NULL, NULL, NULL, NULL, '2024-03-25 04:01:22.969535+00', '2024-03-25 11:01:22.969826+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('980de99d-2305-4e29-9824-312a46459bf9', '00000000-0000-0000-0000-000000000000', 'c29adf8e5bf54feca87c77cb0af1444a', '2024-04-01 04:20:18.263609+00', 'false', NULL, NULL, NULL, NULL, '2024-03-25 04:20:18.601906+00', '2024-03-25 11:20:18.60219+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('dd8290ad-cee4-4f19-ad93-5b047460a58c', '00000000-0000-0000-0000-000000000000', '4cebbcc37fb342a9b3ea81b29fd1b966', '2024-04-01 05:15:53.852657+00', 'false', NULL, NULL, NULL, NULL, '2024-03-25 05:15:54.039768+00', '2024-03-25 12:15:54.040047+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('08d63a1d-6e79-4197-8c9f-19c18606e992', '00000000-0000-0000-0000-000000000000', '907fea349d4c4db3bc4fc34d6bcbd8e9', '2024-04-01 05:39:15.746464+00', 'false', NULL, NULL, NULL, NULL, '2024-03-25 05:39:15.934098+00', '2024-03-25 12:39:15.934404+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('970fab1c-8b00-4255-b1ab-47df6cc96b10', '00000000-0000-0000-0000-000000000000', '48288235af2947319f220d59857e2ca4', '2024-04-01 06:13:57.594932+00', 'false', NULL, NULL, NULL, NULL, '2024-03-25 06:13:57.795382+00', '2024-03-25 13:13:57.796043+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('05df5043-eea3-4784-946d-97a06563a2ca', '00000000-0000-0000-0000-000000000000', '328c8dcf62444000acd8ce065159ff1c', '2024-04-01 07:14:47.337701+00', 'false', NULL, NULL, NULL, NULL, '2024-03-25 07:14:47.558794+00', '2024-03-25 14:14:47.559198+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('75689563-87a0-48d8-8d33-c84655bfd4fd', '9501a528-9608-4b25-8386-5a06ff8cf0b0', '0e7f1a25a8c445daad637e928f0a6c87', '2024-04-01 07:17:37.658168+00', 'false', NULL, NULL, NULL, NULL, '2024-03-25 07:17:37.660555+00', '2024-03-25 14:17:37.660558+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('563c75ba-7841-4219-bedc-42ef524c89be', '9501a528-9608-4b25-8386-5a06ff8cf0b0', 'bc6cc43270d64e07ab9ca239906dc386', '2024-04-01 07:45:53.06466+00', 'false', NULL, NULL, NULL, NULL, '2024-03-25 07:45:53.291296+00', '2024-03-25 14:45:53.29222+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('54194a46-f315-4701-9ce1-041270a02fca', '9501a528-9608-4b25-8386-5a06ff8cf0b0', '3edb1a47c0204ad3b8d7eccd604c275e', '2024-04-01 08:18:41.62558+00', 'false', NULL, NULL, NULL, NULL, '2024-03-25 08:18:41.95408+00', '2024-03-25 15:18:41.954606+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('496d8f98-6c67-4ed8-9072-83069a7dc386', '00000000-0000-0000-0000-000000000000', '080537beb7d74045a4986dce9f8e5fcd', '2024-04-02 06:34:04.570831+00', 'false', NULL, NULL, NULL, NULL, '2024-03-26 06:34:04.764699+00', '2024-03-26 13:34:04.765015+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('4eb69f1f-5fe6-48b6-8cb8-d49ce570c4c0', '00000000-0000-0000-0000-000000000000', '1d6c525b91cd447a920ce86ed0d1ac1a', '2024-04-02 06:48:36.515994+00', 'false', NULL, NULL, NULL, NULL, '2024-03-26 06:48:36.713299+00', '2024-03-26 13:48:36.713727+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('4396458d-fd5a-477a-b1be-409ec181049f', '00000000-0000-0000-0000-000000000000', 'f81f2ae427b94c239efd021be9642c43', '2024-04-02 06:52:50.738746+00', 'false', NULL, NULL, NULL, NULL, '2024-03-26 06:52:50.952021+00', '2024-03-26 13:52:50.952452+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('c269d268-4ac7-478c-b28c-269a29fec2ea', '00000000-0000-0000-0000-000000000000', '2c1c96006eb44942812f0121088b2e65', '2024-04-02 07:01:31.223967+00', 'false', NULL, NULL, NULL, NULL, '2024-03-26 07:01:31.452794+00', '2024-03-26 14:01:31.453147+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('07bff2ed-85c9-4734-8e78-a866ebcf4e5b', '00000000-0000-0000-0000-000000000000', '51b141324bf34f3395161f0bcf6252a0', '2024-04-23 02:15:41.081685+00', 'false', NULL, NULL, NULL, NULL, '2024-04-16 02:15:41.229751+00', '2024-04-16 09:15:41.230049+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('054ad47d-3254-46f2-a0c4-0b8a641f6f73', '00000000-0000-0000-0000-000000000000', '7b2aa52ef54342718737a86f1cc89b0f', '2024-04-23 02:29:54.445377+00', 'false', NULL, NULL, NULL, NULL, '2024-04-16 02:29:54.678327+00', '2024-04-16 09:29:54.678644+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('d97ced1a-1bd2-4bc4-84f6-f51456b70a22', '00000000-0000-0000-0000-000000000000', 'b9cec5d2d13e4717a90a02fd699ba0e1', '2024-04-23 03:00:41.845238+00', 'false', NULL, NULL, NULL, NULL, '2024-04-16 03:00:42.062675+00', '2024-04-16 10:00:42.063041+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('652d40a5-836d-4084-a0c0-c2103cc03f5a', '00000000-0000-0000-0000-000000000000', '6043fada4c584bbcab66769d58d8ff40', '2024-04-23 03:09:09.938837+00', 'false', NULL, NULL, NULL, NULL, '2024-04-16 03:09:10.211601+00', '2024-04-16 10:09:10.212004+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('6dd679a8-603e-4c2f-92b9-38d7a2e85c3b', '00000000-0000-0000-0000-000000000000', '92cd7ebf94564d5e923de5866bb0d141', '2024-04-23 03:24:49.668879+00', 'false', NULL, NULL, NULL, NULL, '2024-04-16 03:24:50.089311+00', '2024-04-16 10:24:50.0897+00', NULL, NULL, NULL, NULL, NULL, 'false', 1),
+	('6fe5e6b0-6ba5-414e-9ac3-b0ed16395d5b', '00000000-0000-0000-0000-000000000000', '5ce7ed6dbae44301a7b4482d9a5a7834', '2024-04-23 03:54:57.894298+00', 'false', NULL, NULL, NULL, NULL, '2024-04-16 03:54:58.090507+00', '2024-04-16 10:54:58.09083+00', NULL, NULL, NULL, NULL, NULL, 'false', 1);
+/*!40000 ALTER TABLE "UserToken" ENABLE KEYS */;
+
+-- Dumping structure for table public.__EFMigrationsHistory
+CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (
+	"MigrationId" VARCHAR(150) NOT NULL,
+	"ProductVersion" VARCHAR(32) NOT NULL,
+	PRIMARY KEY ("MigrationId")
+);
+
+-- Dumping data for table public.__EFMigrationsHistory: 0 rows
+/*!40000 ALTER TABLE "__EFMigrationsHistory" DISABLE KEYS */;
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion") VALUES
+	('20240318013143_InitialTable', '8.0.0'),
+	('20240321032627_AddTableBook', '8.0.0'),
+	('20240321040932_AddTableOrderAndDetail', '8.0.0'),
+	('20240321042436_updateTblOrderDEtail', '8.0.0'),
+	('20240321043142_updateTblOrderDetailAddOrder', '8.0.0'),
+	('20240321044425_addTblInvetory', '8.0.0'),
+	('20240322073605_addTblCart', '8.0.0'),
+	('20240325064730_alterTBLBookColDesc', '8.0.0'),
+	('20240325144013_AlterTblAddColStatus', '8.0.0');
+/*!40000 ALTER TABLE "__EFMigrationsHistory" ENABLE KEYS */;
+
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
